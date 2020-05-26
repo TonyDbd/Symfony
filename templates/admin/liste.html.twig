@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="text-center my-5">Employer liste ! ✅</h1>
+        <div class="container d-flex justify-content-center my-5">
+            <a href="{{ path('add_employer') }}" type="button" class="btn btn-warning"> 
+                Ajouter un employer ?
+            </a>
+        </div>
+
+        <div class="d-flex flex-column">
+            {% for employer in employer %}
+                <div class="card m-3" style="width: 18rem;">
+                    <img src="{{ asset('images/' ~employer.photo)}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ employer.prenom }}</h5>
+                        <p class="card-text">{{ employer.nom }}</p>
+                        <p class="card-text">Travail dans le secteur :{{ employer.post }}</p>
+                        <a href="{{ path('delete_employer', {'employer': employer.id}) }}" 
+                        class="btn btn-danger">Supprimer</a>
+                    </div>
+                </div>
+
+            {% endfor %}
+        
+        </div>
+   
+</div>
+{% endblock %}

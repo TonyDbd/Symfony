@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('CSS/global.css') }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+
+<div class="container my-5">
+    <h1 class="text-center my-2">Bienvenue Chez Deloitte ! ✅</h1>
+
+    <img src="https://lh3.googleusercontent.com/proxy/dl3mMj2vQMrOtaEmN3AwG0yPOJttBq5CX94A_rJZqPaBTCIO9lsz0MCTTkbDbFivLt44PwQU1eVyzZKEVz0Ddg-DOvafXaSIrToPyg9VtZ__HubGTB4pRGl3Xrv6qdVQc9j483afRC8XTbtBO_YzRiw" class="img-fluid pix" alt="">
+</div>
+{% endblock %}

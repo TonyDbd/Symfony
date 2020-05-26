@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Secretaire !{% endblock %}
+
+{% block body %}
+
+<div class="container my-5">
+    <h1  class="text-center ">Vous pouvez ajoutez un nouvel employé !   ✅</h1>
+    <a class="btn btn-primary my-3" href="{{ path('liste') }}">Revenir a ma liste d'employé </a>
+        <div >
+            {{ form_start(form) }}
+
+            {{ form_row(form.nom) }}
+
+            {{ form_row(form.prenom) }}
+        <div class="d-flex justify-content-around my-3">
+            {{ form_row(form.post) }}
+
+            {{ form_row(form.photo) }}
+        </div>
+            {{ form_end(form) }}
+        </div>
+        <h3 class="text-danger my-5"> Mes erreurs </h3>
+        <ul>
+            {% for error in form.vars.errors.form.getErrors(true) %}
+                <li class="text-danger">{{ error.message }}</li>
+            {% endfor %}
+        </ul>
+
+</div>
+{% endblock %}
